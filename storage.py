@@ -21,5 +21,5 @@ class Storage:
         else:
             return None
     
-    def add(self):
-        pass
+    def add(self, key, value):
+        self.data[key] = value

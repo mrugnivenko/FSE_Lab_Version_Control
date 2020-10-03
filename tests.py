@@ -1,7 +1,11 @@
 from storage import Storage
 
 def test_add():
-    pass
+    st = Storage({})
+    st.add('a', 5)
+    key = 'a'
+    val = st.get(key)
+    assert val == 5, "Value for the key {} is not equal to expected".format(key)
 
 def test_remove():
     pass
