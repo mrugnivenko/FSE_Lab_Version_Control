@@ -1,4 +1,5 @@
 from storage import Storage
+import pytest
 
 def test_add():
     st = Storage({})
@@ -8,7 +9,14 @@ def test_add():
     assert val == 5, "Value for the key {} is not equal to expected".format(key)
 
 def test_remove():
-    pass
+    st = Storage({'a': 1, 'b': 2})
+    key = 'b'
+    st.remove(key)
+    val = st.get(key)
+    assert val is None, "Value for the key {} is not deleted".format(key)
+    key = 'c'
+    with pytest.raises(KeyError):
+        st.remove(key)
 
 def test_set():
     st = Storage({'a': 1, 'b': 2})
