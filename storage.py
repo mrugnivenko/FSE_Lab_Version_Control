@@ -20,8 +20,12 @@ class Storage:
             raise KeyError
 
 
-    def set(self):
-        pass
+    def set(self, key, value):
+        if key in self.data:
+            self.data[key] = value
+        else:
+            return None
+    
+    def add(self, key, value):
+        self.data[key] = value
 
-    def add(self):
-        pass
